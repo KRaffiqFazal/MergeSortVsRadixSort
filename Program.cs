@@ -4,7 +4,7 @@
   {
     static void Main(string[] args)
     {
-      AlgorithmTester _newTest = new AlgorithmTester(RandomIntegerList.GenerateRandomList(1000), 5);
+      AlgorithmTester _newTest = new AlgorithmTester(RandomIntegerList.GenerateRandomList(10), 9);
       _newTest = new AlgorithmTester(RandomIntegerList.GenerateRandomList(1000000), 15);
 
       List<double> _averages = new List<double>(_newTest.Averages());
