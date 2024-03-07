@@ -5,10 +5,6 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Radixsort", "Radixsort.csproj", "{35636855-8601-41C3-8ED0-60730E5EC8AB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mergesort", "..\Mergesort\Mergesort.vcxproj", "{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SortingAlgorithms", "SortingAlgorithms", "{29B86491-A0AA-4659-9A42-477EC85B39B9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,25 +27,9 @@ Global
 		{35636855-8601-41C3-8ED0-60730E5EC8AB}.Release|x64.Build.0 = Release|Any CPU
 		{35636855-8601-41C3-8ED0-60730E5EC8AB}.Release|x86.ActiveCfg = Release|Any CPU
 		{35636855-8601-41C3-8ED0-60730E5EC8AB}.Release|x86.Build.0 = Release|Any CPU
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Debug|Any CPU.Build.0 = Debug|x64
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Debug|x64.ActiveCfg = Debug|x64
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Debug|x64.Build.0 = Debug|x64
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Debug|x86.ActiveCfg = Debug|Win32
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Debug|x86.Build.0 = Debug|Win32
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Release|Any CPU.ActiveCfg = Release|x64
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Release|Any CPU.Build.0 = Release|x64
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Release|x64.ActiveCfg = Release|x64
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Release|x64.Build.0 = Release|x64
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Release|x86.ActiveCfg = Release|Win32
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{35636855-8601-41C3-8ED0-60730E5EC8AB} = {29B86491-A0AA-4659-9A42-477EC85B39B9}
-		{C78E5B14-FA83-4765-A3FE-35F4E4F2B436} = {29B86491-A0AA-4659-9A42-477EC85B39B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D0482E5-BC02-4DFE-92AC-334CBA7C88EC}

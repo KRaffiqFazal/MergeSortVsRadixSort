@@ -44,24 +44,33 @@ namespace AlgorithmsAssignment2
       _results = new List<double>();
 
       // Below loop tests radix sort for a given number of tests that is divisible by 3.
-      for(int i = 0; i < _trialsNeeded; i++)
+      for(int i = 0; i < _trialsNeeded - 2; i++)
       {
         _results.Add(IndividualTest());
       }
+      _sortingAlgorithm.UnsortedList = _sortingAlgorithm.Sort();
+      _results.Add(IndividualTest());
+      _sortingAlgorithm.UnsortedList.Reverse();
+      _results.Add(IndividualTest());
+
+
       _results.Sort();
 
-      // Below code splits the now ordered averages into 3 sections to get averages.
+      // Below code splits the now ordered averages into 3 sections to get averages, it also appends first value as lower bound and last value as upper bound.
       double _averageSegment = 0;
 
-      for(int i = 0; i < _trialsNeeded; i++)
+      _finalAverages.Add(Math.Round(_results[0], 5));
+
+      for(int i = 1; i <= _trialsNeeded; i++)
       {
-        _averageSegment += _results[i];
+        _averageSegment += _results[i - 1];
         if(i % (_trialsNeeded / 3) == 0)
         {
-          _finalAverages.Add((_averageSegment) / (_trialsNeeded / 3));
+          _finalAverages.Add(Math.Round(( _averageSegment / (_trialsNeeded / 3)), 5));
           _averageSegment = 0;
         }
       }
+      _finalAverages.Add(Math.Round(_results[_results.Count - 1], 5));
       return _finalAverages;
     }
     /// <summary>
