@@ -84,7 +84,7 @@ namespace AlgorithmsAssignment2
       _sortingAlgorithm.Sort();
       _algorithmTimer.Stop();
       
-      return _algorithmTimer.Elapsed.TotalMilliseconds;
+      return _algorithmTimer.Elapsed.TotalNanoseconds;
     }
   }
 }
