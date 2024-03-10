@@ -19,7 +19,7 @@ namespace AlgorithmsAssignment2
     public List<int> Sort()
     {
       _sortedList = new List<int>(UnsortedList);
-      int _maxValue = GetMaximum();
+      int _maxValue = _sortedList.Max();
 
       for(int _exponent = 1; _maxValue / _exponent > 0; _exponent *= 10)
       {
@@ -66,20 +66,6 @@ namespace AlgorithmsAssignment2
       {
         _sortedList[i] = _outputArr[i];
       }
-    }
-
-    private int GetMaximum()
-    {
-      // Randomly generated list cannot have negatives, thus can be used as a starting value to get max value in list.
-      int _maxValue = -1;
-      for(int i = 1; i < _sortedList.Count; i++)
-      {
-        if(_sortedList[i] > _maxValue)
-        {
-          _maxValue = _sortedList[i];
-        }
-      }
-      return _maxValue;
     }
   }
 }
