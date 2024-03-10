@@ -36,19 +36,13 @@ namespace AlgorithmsAssignment2
       int[] _outputArr = new int[_sortedList.Count];
       int[] _occurences = new int[10];
 
-      // Initialises the occurences of each digit to 0;
-      for(int i = 0; i < 10; i++)
-      {
-        _occurences[i] = 0;
-      }
-
       // Loops through each item in list and updates occurences based on place value.
       for(int i = 0; i < _sortedList.Count; i++)
       {
         _occurences[(_sortedList[i] / exponent) % 10]++;
       }
 
-      // Shifts all values down a place.
+      // works out cumulative spread of values.
       for(int i = 1; i < 10; i++)
       {
         _occurences[i] += _occurences[i - 1];
@@ -61,11 +55,7 @@ namespace AlgorithmsAssignment2
         _occurences[(_sortedList[i] / exponent) % 10]--;
       }
 
-      // Modifies unsorted list so that it now stores new slightly sorted values.
-      for(int i = 0; i < _sortedList.Count; i++)
-      {
-        _sortedList[i] = _outputArr[i];
-      }
+      _sortedList = new List<int>(_outputArr.ToList());
     }
   }
 }
