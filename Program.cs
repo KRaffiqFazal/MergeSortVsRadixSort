@@ -14,7 +14,7 @@
         Console.WriteLine("Please provide integer for number of testing values.");
         Environment.Exit(0);
       }
-      if(!int.TryParse(args[0], out int _numOfTrials))
+      if(!int.TryParse(args[1], out int _numOfTrials))
       {
         Console.WriteLine("Please provide integer for number of trials.");
         Environment.Exit(0);
