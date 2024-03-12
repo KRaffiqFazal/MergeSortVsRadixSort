@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.FileIO;
+using Radixsort;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,6 +17,7 @@ namespace AlgorithmsAssignment2
     private int _trialsNeeded;
     private List<double> _results;
     private List<int> _valuesToSort;
+    private bool isMergeSort = false;
 
     /// <summary>
     /// Creates an Algorithm tester which will test the Radix sort algorithm for a single list multiple times and return
@@ -23,7 +25,7 @@ namespace AlgorithmsAssignment2
     /// </summary>
     /// <param name="testingValues">List of values to sort.</param>
     /// <param name="numOfTrials">The number of trials the user wishes to test with.</param>
-    public AlgorithmTester(List<int> testingValues, int numOfTrials)
+    public AlgorithmTester(List<int> testingValues, int numOfTrials, int sortingType)
     {
       // Efficiency will be divided into BigO, BigOmega and BigTheta, therefore must be divisible by 3 to work out bounds.
       if(numOfTrials % 3 != 0)
@@ -32,6 +34,10 @@ namespace AlgorithmsAssignment2
       }
       _trialsNeeded = numOfTrials;
       _valuesToSort = testingValues;
+      if(sortingType == 1)
+      {
+        isMergeSort = true;
+      }
     }
 
     /// <summary>
@@ -80,9 +86,18 @@ namespace AlgorithmsAssignment2
     private double IndividualTest()
     {
       Stopwatch _algorithmTimer = new Stopwatch();
-      _algorithmTimer.Start();
-      RadixSort.Sort(_valuesToSort);
-      _algorithmTimer.Stop();
+      if(isMergeSort)
+      {
+        _algorithmTimer.Start();
+        MergeSort.MergeSortAsc(_valuesToSort);
+        _algorithmTimer.Stop();
+      }
+      else
+      {
+        _algorithmTimer.Start();
+        RadixSort.Sort(_valuesToSort);
+        _algorithmTimer.Stop();
+      }
       
       return _algorithmTimer.Elapsed.TotalNanoseconds;
     }
