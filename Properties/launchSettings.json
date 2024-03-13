@@ -2,7 +2,7 @@
   "profiles": {
     "Radixsort": {
       "commandName": "Project",
-      "commandLineArgs": "100 30 0"
+      "commandLineArgs": "100000 30 0"
     }
   }
 }
