@@ -19,7 +19,7 @@ namespace AlgorithmsAssignment2
       Random _randomNumber = new Random();
       for(int i = 1; i <= size; i++)
       {
-        _randomList.Add(_randomNumber.Next(size));
+        _randomList.Add(_randomNumber.Next(-size, size));
       }
       return _randomList;
     }

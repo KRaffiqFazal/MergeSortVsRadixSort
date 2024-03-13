@@ -16,12 +16,33 @@ namespace AlgorithmsAssignment2
     public static List<int> Sort(List<int> sortedList)
     {
       int _maxValue = sortedList.Max();
+      int _minValue = sortedList.Min();
+      int _chosenVal;
+      if(_maxValue >= Math.Abs(_minValue))
+      {
+        _chosenVal = _maxValue;
+      }
+      else
+      {
+        _chosenVal = Math.Abs(_minValue);
+      }
 
-      for(int _exponent = 1; _maxValue / _exponent > 0; _exponent *= 10)
+      for(int _exponent = 1; _chosenVal / _exponent > 0; _exponent *= 10)
       {
         sortedList = CountingSort(_exponent, sortedList);
       }
+
+      sortedList = GetOrdered(sortedList);
       return sortedList;
+    }
+
+    private static List<int> GetOrdered(List<int> sortedList) 
+    {
+      List<int> _negatives = sortedList.Where(item => item < 0).ToList();
+      sortedList.RemoveAll(item => item < 0);
+      _negatives.Reverse();
+      _negatives.AddRange(sortedList);
+      return _negatives;
     }
     /// <summary>
     /// Runs a counting sort on each digit of each value of the list.
@@ -35,7 +56,7 @@ namespace AlgorithmsAssignment2
       // Loops through each item in list and updates occurences based on place value.
       for(int i = 0; i < sortedList.Count; i++)
       {
-        _occurences[(sortedList[i] / exponent) % 10]++;
+        _occurences[Math.Abs((sortedList[i] / exponent) % 10)]++;
       }
 
       // works out cumulative spread of values.
@@ -47,8 +68,8 @@ namespace AlgorithmsAssignment2
       // Elements can be sorted based on exponent and are added to output array in correct position.
       for(int i = sortedList.Count - 1; i >= 0; i--)
       {
-        _outputArr[_occurences[(sortedList[i] / exponent) % 10] - 1] = sortedList[i];
-        _occurences[(sortedList[i] / exponent) % 10]--;
+        _outputArr[_occurences[Math.Abs((sortedList[i] / exponent) % 10)] - 1] = sortedList[i];
+        _occurences[Math.Abs((sortedList[i] / exponent) % 10)]--;
       }
 
       return _outputArr.ToList();
