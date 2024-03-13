@@ -35,7 +35,11 @@ namespace AlgorithmsAssignment2
       sortedList = GetOrdered(sortedList);
       return sortedList;
     }
-
+    /// <summary>
+    /// Gets ordered version of list after splitting negative values away.
+    /// </summary>
+    /// <param name="sortedList">List that is sorted with absolute values.</param>
+    /// <returns>Fully sorted list.</returns>
     private static List<int> GetOrdered(List<int> sortedList) 
     {
       List<int> _negatives = sortedList.Where(item => item < 0).ToList();
